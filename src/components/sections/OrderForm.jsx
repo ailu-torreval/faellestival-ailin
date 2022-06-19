@@ -9,7 +9,7 @@ function OrderForm(props) {
   return (
     <div className="formBase">
       <button className="closeFormBtn" onClick={closeForm}>✖</button>
-      <TicketForm />
+      <TicketForm {...props} />
     </div>
   );
 }

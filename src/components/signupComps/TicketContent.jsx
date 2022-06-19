@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import TicketAmountHandler from "./TicketAmountHandler";
 import DayContainer from "./DayContainer";
 
-function TicketContent({ formData, setFormData, checkboxLabels }) {
+function TicketContent({ formData, setFormData, checkboxLabels, ticketSelection, setTicketSelection }) {
   const [typeIsChecked, setTypeIsChecked] = useState([]);
   const [durationIsChecked, setDurationIsChecked] = useState([]);
   const [dayIsChecked, setDayIsChecked] = useState([]);
@@ -35,13 +35,21 @@ function TicketContent({ formData, setFormData, checkboxLabels }) {
 
     setDurationIsChecked(
       durationIsChecked.map((d) => {
-        return {
-          select: false,
-          ticketDuration: d.ticketDuration,
-          id: d.id,
-          value: d.ticketDuration,
-        };
-      })
+
+        if (d.id === ticketSelection) {
+          return { 
+            select: true,
+              ticketDuration: d.ticketDuration,
+              id: d.id,
+              value: d.ticketDuration
+        }} else {
+          return {
+            select: false,
+            ticketDuration: d.ticketDuration,
+            id: d.id,
+            value: d.ticketDuration
+          }
+        }})
     );
   }, []);
 
@@ -119,11 +127,7 @@ function TicketContent({ formData, setFormData, checkboxLabels }) {
                 checked={d.select}
                 onChange={(event) => {
                   let checked = event.target.checked;
-                  if (d.id === 3) {
-                    setShowDays(true);
-                  } else {
-                    setShowDays(false);
-                  }
+                  setTicketSelection(d.id)
                   setDurationIsChecked(
                     durationIsChecked.map((data) => {
                       if (d.id === data.id) {
@@ -143,14 +147,14 @@ function TicketContent({ formData, setFormData, checkboxLabels }) {
         </div>
 
         <div>
-          {showDays ? (
-            <DayContainer
+{          ticketSelection === 3 &&             <DayContainer
               formData={formData}
               setFormData={setFormData}
               dayIsChecked={dayIsChecked}
               setDayIsChecked={setDayIsChecked}
-            />
-          ) : null}
+            />}
+
+
         </div>
       </div>
       <div className="Amount-container">

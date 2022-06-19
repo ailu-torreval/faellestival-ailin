@@ -6,6 +6,8 @@ import Btn from "./Btn";
 function TicketCard(props) {
   function openForm() {
     props.setShowForm(true);
+    props.setTicketSelection(props.value);
+    console.log(props.ticketSelection);
     // console.log("OPEN FORM");
     window.location = "#";
   }

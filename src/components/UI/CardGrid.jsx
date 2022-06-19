@@ -13,6 +13,7 @@ function CardGrid(props) {
             content={ticket.specs}
             price={ticket.price}
             key={index}
+            value= {index +3}
             {...props}
           />
         ))}

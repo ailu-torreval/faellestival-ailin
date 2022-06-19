@@ -13,6 +13,7 @@ function TicketsPage(props) {
   const ticketsContent = useContext(TicketsContext);
   const [showForm, setShowForm] = useState(false);
   const [soldOut, setSoldOut] = useState(false);
+  const [ticketSelection, setTicketSelection] = useState();
 
   //check if there is tickets available
   const initialValue = 0;
@@ -46,11 +47,14 @@ function TicketsPage(props) {
             ticketsContent={ticketsContent}
             setShowForm={setShowForm}
             soldOut={soldOut}
+            setTicketSelection={setTicketSelection}
+            ticketSelection={ticketSelection}
           />
         </>
       )}
 
-      {showForm && <OrderForm setShowForm={setShowForm} />}
+      {showForm && <OrderForm setShowForm={setShowForm} ticketSelection={ticketSelection} setTicketSelection={setTicketSelection}
+ />}
     </main>
   );
 }

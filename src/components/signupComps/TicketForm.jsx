@@ -79,6 +79,7 @@ function TicketForm(props) {
           checkboxLabels={checkboxLabels}
           formData={formData}
           setFormData={setFormData}
+          {...props}
         />
       );
     } else if (page === 1) {
