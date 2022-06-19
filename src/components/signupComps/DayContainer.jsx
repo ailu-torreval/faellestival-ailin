@@ -16,7 +16,7 @@ const DayContainer = ({
         {dayIsChecked.map((d, index) => (
           <div key={index}>
             <input
-              type="checkbox"
+              type="radio"
               id={d.id}
               value={d.value}
               checked={d.select}
@@ -35,9 +35,7 @@ const DayContainer = ({
                 setFormData({ ...formData, ticketDay: event.target.value });
               }}
             ></input>
-            <div>
-              <span>{d.value}</span>
-            </div>
+              <label htmlFor={d.id}>{d.value}</label>
           </div>
         ))}
       </div>

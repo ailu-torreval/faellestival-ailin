@@ -79,7 +79,7 @@ function TicketContent({ formData, setFormData, checkboxLabels }) {
           {typeIsChecked.map((d, index) => (
             <div key={index}>
               <input
-                type="checkbox"
+                type="radio"
                 id={d.id}
                 value={d.value}
                 checked={d.select}
@@ -99,9 +99,7 @@ function TicketContent({ formData, setFormData, checkboxLabels }) {
                   setFormData({ ...formData, ticketType: event.target.value });
                 }}
               ></input>
-              <div>
-                <span>{d.value}</span>
-              </div>
+              <label htmlFor={d.id}>{d.value}</label>
             </div>
           ))}
         </div>
@@ -115,7 +113,7 @@ function TicketContent({ formData, setFormData, checkboxLabels }) {
           {durationIsChecked.map((d, index) => (
             <div key={index}>
               <input
-                type="checkbox"
+                type="radio"
                 id={d.id}
                 value={d.value}
                 checked={d.select}
@@ -139,9 +137,7 @@ function TicketContent({ formData, setFormData, checkboxLabels }) {
                   setFormData({ ...formData, ticketDuration: event.target.value });
                 }}
               ></input>
-              <div>
-                <span>{d.value}</span>
-              </div>
+              <label htmlFor={d.id}>{d.value}</label>
             </div>
           ))}
         </div>
