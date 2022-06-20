@@ -43,6 +43,8 @@ function PersonalInfo({ formData, setFormData, setPage, required, setRequired })
   // console.log(n);
   // console.log(formData);
 
+  reserveRespons.id ? setRequired(true) : setRequired(false);
+
   const [guestArray, setGuestArray] = useState([]);
 
   useEffect(() => {
@@ -76,6 +78,7 @@ function PersonalInfo({ formData, setFormData, setPage, required, setRequired })
           />
         </>
       )}
+      {/* { !reserveRespons.id || required   ? <p>Please fill the required fields</p> : [] } */}
       { required && <p>Please fill the required fields</p>}
       {reserveRespons.id &&
         guestArray.map((d, index) => (
