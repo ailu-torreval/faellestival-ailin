@@ -168,7 +168,10 @@ function TicketForm(props) {
             <button
               onClick={() => {
                 if (page === FormTitles.length - 1) {
-                  alert("TICKET PURCHASE COMPLETE! :) ");
+                  props.setShowForm(false);
+                  props.setShowTicketsPage(false);
+                  props.setShowLandPage(true);
+                  window.location = "#";
                   // console.log(formData);
                 } else if (page === 2) {
                   // console.log(formData);

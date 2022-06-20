@@ -65,7 +65,7 @@ function OtherInfo({ formData, setFormData, index }) {
       />
       <div className="cardGrid extrasCardGrid">
         <div>
-          <AddOnCard>
+          <AddOnCard  key={index}>
             <CardTitle
               key={index}
               head={xtraData[0].title}

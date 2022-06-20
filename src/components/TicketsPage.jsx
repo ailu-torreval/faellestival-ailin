@@ -53,7 +53,7 @@ function TicketsPage(props) {
         </>
       )}
 
-      {showForm && <OrderForm setShowForm={setShowForm} ticketSelection={ticketSelection} setTicketSelection={setTicketSelection}
+      {showForm && <OrderForm setShowForm={setShowForm} ticketSelection={ticketSelection} setTicketSelection={setTicketSelection} {...props}
  />}
     </main>
   );

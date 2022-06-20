@@ -46,12 +46,12 @@ function FestLinks(props) {
         content="Program"
         action={goToProgramPage}
       />
+      <Link className="link" content="Map" action={goToMapPage} />
       <Link
         className="link gradientTxt"
-        content="Main Page"
+        content="Log Out"
         action={goTomainPage}
       />
-      <Link className="link" content="Map" action={goToMapPage} />
     </ul>
   );
 }
